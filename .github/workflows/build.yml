@@ -33,10 +33,10 @@ jobs:
       if: ${{success() && github.repository == '7man7LMYT/RandomGeyserMOTD' && github.ref_name == 'master'}}
       uses: marvinpinto/action-automatic-releases@latest
       with:
-        repo_token: ${{secrets.GITHUB_TOKEN}}
+        repo_token: ${{secrets.ACTIONS_TOKEN}}
         draft: false
         prerelease: false
         automatic_release_tag: v${{github.run_attempt}}
-        files: |
+        files: | 
           *.jar
         

@@ -1,4 +1,4 @@
-name: ${projectName}
+name: ${project.artifactId}
 id: ${artifactId}
 version: ${project.version}
 main: io.github.randomotd.RandomGeyserMOTD

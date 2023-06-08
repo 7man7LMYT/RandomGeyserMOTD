@@ -1,4 +1,4 @@
-RandomGeyserMOTD ${project.version}
+${project.artifactId} - ${project.version}
 §bLook mom, I'm a random MOTD!
 §eRory!
 §eLorelai!
