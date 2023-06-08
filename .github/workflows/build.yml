@@ -1,0 +1,42 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [ "master" ]
+    paths-ignore:
+      - '.gitignore'
+      - 'README.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: RandomGeyserMOTD
+        path: target/*.jar
+        if-no-files-found: error
+
+    - name: Upload and Release
+      if: ${{success() && github.repository == '7man7LMYT/RandomGeyserMOTD' && github.ref_name == 'master'}}
+      uses: marvinpinto/action-automatic-releases@latest
+      with:
+        repo_token: ${{secrets.GITHUB_TOKEN}}
+        draft: false
+        prerelease: false
+        tag_name: v${{github.run_attempt}}
+        files: |
+          *.jar
+        
