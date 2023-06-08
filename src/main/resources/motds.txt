@@ -1,0 +1,4 @@
+RandomGeyserMOTD ${project.version}
+§bLook mom, I'm a random MOTD!
+§eRory!
+§eLorelai!

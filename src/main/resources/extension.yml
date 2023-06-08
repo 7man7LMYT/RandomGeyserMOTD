@@ -1,0 +1,6 @@
+name: ${projectName}
+id: ${artifactId}
+version: ${project.version}
+main: io.github.randomotd.RandomGeyserMOTD
+api: 1.0.0
+authors: [7man7LMYT]
