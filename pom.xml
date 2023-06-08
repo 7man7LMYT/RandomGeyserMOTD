@@ -16,7 +16,7 @@
     </properties>
 
     <build>
-        <finalName>${projectName}</finalName>
+        <finalName>${projectName}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
