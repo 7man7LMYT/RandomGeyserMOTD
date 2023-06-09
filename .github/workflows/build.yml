@@ -36,7 +36,7 @@ jobs:
         repo_token: ${{secrets.ACTIONS_TOKEN}}
         draft: false
         prerelease: false
-        automatic_release_tag: v${{github.run_attempt}}
+        automatic_release_tag: v${{github.run_number}}
         files: | 
           target/*.jar
         
