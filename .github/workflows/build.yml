@@ -38,5 +38,5 @@ jobs:
         prerelease: false
         automatic_release_tag: v${{github.run_attempt}}
         files: | 
-          *.jar
+          target/*.jar
         
